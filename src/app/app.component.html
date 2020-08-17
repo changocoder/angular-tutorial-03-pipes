@@ -45,13 +45,48 @@
         </tr>
         <tr>
           <td> {{ porcentaje }} </td>
-          <td> percentaje </td>
+          <td> percent: '2.2'  </td>
           <td>{{ porcentaje | percent: '2.2'  }} </td>
         </tr>
-      </tbody>
+         <tr>
+          <td> {{ salario }} </td>
+          <td> currency  </td>
+          <td> {{ salario | currency }}</td>
+        </tr>
+        <tr>
+          <td> {{ salario }} </td>
+          <td> currency: 'ARS' </td>
+          <td> {{ salario | currency:'ARS $':'symbol' }}</td>
+        </tr>
+        <tr>
+          <td> {{ salario }} </td>
+          <td> currency: 'CAD': 'symbol':'.0-0' </td>
+          <td> {{ salario | currency:'CAD':'symbol':'.0-1' }}</td>
+        </tr>
+        <tr>
+          <td> Valor Promesa </td>
+          <td> async </td>
+          <td> {{ valorPromesa | async }}</td>
+        </tr>
+        <tr>
+          <td> {{ fecha }} </td>
+          <td> date </td>
+          <td> {{ fecha | date }}</td>
+        </tr>
+        <tr>
+          <td> {{ fecha }} </td>
+          <td> date: 'medium'</td>
+          <td> {{ fecha | date: 'medium' }}</td>
+        </tr>
+        <tr>
+          <td> {{ fecha }} </td>
+          <td> date: 'MMM -dd' </td>
+          <td> {{ fecha | date: 'MMM - dd' }}</td>
+        </tr>
+    </tbody>
     </table>
 
-    <h4>Slice: 5:10</h4>
+    <h3>Slice: 5:10</h3>
     
     <ul>
         <li *ngFor="let item of listaNumeros | slice:5:10" >
@@ -59,6 +94,14 @@
         </li>
     </ul>
 
+    <h3>JSON</h3>
+    <div class="row">
+      <div class="col">
+          <pre>
+            {{ heroe | json }}
+          </pre>
+      </div>
+    </div>
   </div>
 </div>
 
